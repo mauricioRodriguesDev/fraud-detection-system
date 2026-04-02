@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: fraud-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: 155157
+      POSTGRES_PASSWORD: fraudpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
